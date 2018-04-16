@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    @model belt_exam.Models.Product
+    <h1>New Auction</h1>
+    <a href='/dashboard'>Home</a>
+    <a href='/logout'>Log out</a>
+    <form asp-controller="Home" asp-action="AddAuction" method='post'>
+        <table>
+            <tr>
+                <td><label asp-for='Name'></label></td>
+                <td><input asp-for='Name'> <span asp-validation-for="Name"></span></td>
+            </tr>
+            <tr>
+                <td><label asp-for='Description'></label></td>
+                <td><input asp-for='Description'> <span asp-validation-for="Description"></span></td>
+            </tr>
+            <tr>
+                <td><label asp-for='Bid'></label></td>
+                <td><input asp-for='Bid'> <span asp-validation-for="Bid"></span></td>
+            </tr>
+            <tr>
+                <td><label asp-for='EndDate'></label></td>
+                <td><input type='date' asp-for='EndDate'> <span asp-validation-for="EndDate"></span></td>
+            </tr>
+        </table>
+        <input type='submit' value='Create Auction'>
+    </form>
+</body>
+</html>

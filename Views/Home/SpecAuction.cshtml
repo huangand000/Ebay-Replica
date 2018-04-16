@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href='/dashboard'>Home</a>
+    <a href='/logout'>Log out</a>
+    <h1>@ViewBag.SpecProduct["ProductName"]</h1>
+    <p>Created by: @ViewBag.SpecProduct["UserName"]</p>
+    <p>Time Remaining: @ViewBag.SpecProduct["end_date"] days</p>
+    <p>@ViewBag.SpecProduct["description"]</p>
+    <p>Current Highest Bid: @ViewBag.SpecProduct["bid"]</p>
+    <p>By @ViewBag.SpecProduct["bidder_name"]</p>
+
+    @TempData["errors"]
+    <form action='/newBid' method='post'>
+        <input type='text' name='bid' placeholder='Your bid goes here..'>
+        <input type='hidden' name='product_id' value='@ViewBag.SpecProduct["ProductId"]'>
+        <input type='submit' value='Bid!!'>
+    </form>
+</body>
+</html>
